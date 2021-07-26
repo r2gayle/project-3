@@ -39,7 +39,7 @@ function App() {
 
     if(query && cuisine) {
       params.query = query
-      params.cuisine = cuisine
+      params.cuisineType = cuisine
       console.log('hello');
     } else {
       if(query && !cuisine) {
