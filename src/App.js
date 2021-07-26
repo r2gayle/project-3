@@ -13,8 +13,7 @@ function App() {
   
   const [ recipeArray, setRecipeArray ] = useState([]);
   const [ userChoice, setUserChoice ] = useState("");
-  const [ query, setQuery ] = useState("beef")
-  const [ cuisine, setCuisine ] = useState("Asian")
+  const [ query, setQuery ] = useState("")
   // api call rendering right away need sol
 
 
@@ -26,7 +25,7 @@ function App() {
     // const input = 'chicken'
 
     axios({
-      url: `https://api.edamam.com/search?q=${query}&app_id=${apiId}&app_key=${apiKey}&cuisineType=${cuisine}`,
+      url: `https://api.edamam.com/search?q=${query}&app_id=${apiId}&app_key=${apiKey}`,
       // reqUrl: reqUrl,
       //           headers: {
       //               "Content-Type": "application/json"
@@ -35,12 +34,11 @@ function App() {
         q: query,
         apiId: apiId,
         apiKey: apiKey,
-        cuisineType: cuisine
       }
     }).then( (responseData) => {
       // once we get the data back, we want to UPDATE our state that holds the data, so we can use it in our JSX
       console.log(recipeArray)
-      console.log(responseData.data.hits[1].recipe.cuisineType);
+      console.log(responseData.data.hits);
       setRecipeArray(responseData.data.hits)
 
 
@@ -57,11 +55,11 @@ function App() {
     
   }
 
-  const handleChangeTwo = (event) => {
-    setCuisine(event.target.value)
-    console.log(event.target.value);
+  // const handleChangeTwo = (event) => {
+  //   setCuisine(event.target.value)
+  //   console.log(event.target.value);
     
-  }
+  // }
 
   
   const handleSubmit = (event) => {
@@ -70,21 +68,11 @@ function App() {
     setQuery(userChoice);
     // setCuisine(cuisine)
     
-    // setUserChoice("")
-    // setCuisine("")
+    setUserChoice("")
 
       
-       console.log(cuisine);
       console.log(userChoice);
     }
-
-    const modalAlert = () => {
-      // if(recipeArray.length === 0) {
-      //   console.log('herehere');
-      // }
-    }
-
-    modalAlert();
 
     
 
@@ -113,32 +101,6 @@ function App() {
             required
             />
           </div>
-
-          <div className="drop-Down">
-            <label htmlFor="userCuisine">cuisine Type</label>
-            <select name="userCuisine" id="userCuisine" value={cuisine} onChange={handleChangeTwo}>
-              <option value="All" defaultValue>All</option>
-              <option value="American">American</option>
-              <option value="Asian">Asian</option>
-              <option value="British">British</option>
-              <option value="Caribbean">Caribbean</option>
-              {/* <option value=""></option>
-              <option value=""></option>
-              <option value=""></option>
-              <option value=""></option>
-              <option value=""></option>
-              <option value=""></option>
-              <option value=""></option>
-              <option value=""></option>
-              <option value=""></option>
-              <option value=""></option>
-              <option value=""></option>
-              <option value=""></option>
-              <option value=""></option>
-              <option value=""></option> */}
-            </select>
-          </div>
-          <button>Submit</button>
         </form>
 
       <section className="user-recipe">
