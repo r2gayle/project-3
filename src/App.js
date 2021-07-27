@@ -57,18 +57,7 @@ function App() {
 
        
        url: `https://api.edamam.com/search?q=${query}&app_id=${apiId}&app_key=${apiKey}`,
-       // reqUrl: reqUrl,
-       //           headers: {
-       //               "Content-Type": "application/json"
-       //           },
-      //  params: {
-      //    q: query,
-      //    apiId: apiId,
-      //    apiKey: apiKey,
-      //    from: 0,
-      //    to: 20,
-      //    cuisineType: cuisine  
-      //  }
+      
       apiId: apiId,
       apiKey: apiKey,
       params
