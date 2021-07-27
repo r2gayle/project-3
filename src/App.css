@@ -82,26 +82,40 @@ header {
   padding: 80px 0px;
 }
 
-.label-search-container {
+.label-search-container, .drop-down-cuisine {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
 }
 
+.drop-down-cuisine {
+  margin-top: 40px;
+}
 
-label {
+
+.label-search-container label, .drop-down-cuisine label {
   margin-right: 3%;
   color: white;
   font-size: 1.4rem;
 }
 
-input {
+input, .drop-down-cuisine select, button {
   border: none;
   border-radius: 10px;
-  height: 40px;
-  width: 330px;
   background-color: white
-  
+}
+
+input, .drop-down-cuisine select {
+  height: 40px;
+}
+
+input {
+  width: 330px;
+}
+
+button {
+  margin: 60px 0px;
+  padding: 10px;
 }
 
 main ul {
@@ -164,7 +178,7 @@ footer p {
 
 
 @media (max-width: 775px) {
-  .label-search-container {
+  .label-search-container, .drop-down-cuisine {
     flex-direction: column;
     justify-content: center;
   }
@@ -173,9 +187,13 @@ footer p {
     margin-right: 0%;
   }
 
-  input {
+  input, .drop-down-cuisine select {
     align-self: center;
     margin-top: 35px;
+  }
+
+  .drop-down-cuisine select {
+    width: 330px;
   }
 }
 
@@ -190,6 +208,10 @@ footer p {
     font-size: calc(2.7rem + 0.5vw);
     margin-bottom: 20px;
   }
+
+  label, input, .drop-down-cuisine select {
+    width: 100%;
+  }
 }
 
 
@@ -198,14 +220,11 @@ footer p {
     font-size: calc(1rem + 1.9vw);
   }
 
-  label, input {
-    width: 100%;
-  }
 }
 
 @media (max-width: 320px) {
   h1 {
-     font-size: calc(2.4rem + 0.2vw);;
+    font-size: calc(2.4rem + 0.2vw);;
   }
   label {
     font-size: calc(1rem + 1.4vw);

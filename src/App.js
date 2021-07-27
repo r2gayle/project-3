@@ -15,6 +15,7 @@ function App() {
   const [ userChoice, setUserChoice ] = useState("");
   const [ query, setQuery ] = useState("")
   const [ cuisine, setCuisine ] = useState("")
+  // const [healthChoice, setHealthChoice ] = useState("")
   const firstMount = useRef(true);
   // api call rendering right away need sol
 
@@ -40,6 +41,7 @@ function App() {
     if(query && cuisine) {
       params.query = query
       params.cuisineType = cuisine
+      // params.Health = healthChoice
       console.log('hello');
     } else {
       if(query && !cuisine) {
@@ -99,12 +101,18 @@ function App() {
     
   }
 
+  // const handleChangeThree = (event) => {
+  //   setHealthChoice(event.target.value)
+  //   console.log(event.target.value);
+  // }
+
   
   const handleSubmit = (event) => {
     event.preventDefault();
     
     setQuery(userChoice);
-    setCuisine(cuisine)
+    setCuisine(cuisine);
+    // setHealthChoice(healthChoice)
     
     setUserChoice("")
 
@@ -141,30 +149,41 @@ function App() {
             />
           </div>
 
-          <div className="drop-Down">
-            <label htmlFor="userCuisine">cuisine Type</label>
+          <div className="drop-down-cuisine">
+            <label htmlFor="userCuisine">Cuisine Type</label>
             <select name="userCuisine" id="userCuisine" value={cuisine} onChange={handleChangeTwo}>
               <option value="" selected>All</option>
               <option value="American">American</option>
               <option value="Asian">Asian</option>
               <option value="British">British</option>
               <option value="Caribbean">Caribbean</option>
-              {/* <option value=""></option>
-              <option value=""></option>
-              <option value=""></option>
-              <option value=""></option>
-              <option value=""></option>
-              <option value=""></option>
-              <option value=""></option>
-              <option value=""></option>
-              <option value=""></option>
-              <option value=""></option>
-              <option value=""></option>
-              <option value=""></option>
-              <option value=""></option>
-              <option value=""></option> */}
+              <option value="Central Europe">Central Europe</option>
+              <option value="Chinese">Chinese</option>
+              <option value="Eastern Europe">Eastern Europe</option>
+              <option value="French">French</option>
+              <option value="Indian">Indian</option>
+              <option value="Italian">Italian</option>
+              <option value="Japanese">Japanese</option>
+              <option value="Kosher">Kosher</option>
+              <option value="Mediterranean">Mediterranean</option>
+              <option value="Mexican">Mexican</option>
+              <option value="Middle Eastern">Middle Eastern</option>
+              <option value="Nordic">Nordic</option>
+              <option value="South American">South American</option>
+              <option value="South East Asian">South East Asian</option>
             </select>
           </div>
+
+          {/* <div className="drop-down-health">
+            <label htmlFor="userHealth">Diet Choice</label>
+            <select name="userHealth" id="userHealth" value={healthChoice} onChange={handleChangeThree}>
+              <option value="" selected>All</option>
+              <option value="dairy-free">Dairy</option>
+              <option value="Asian">Asian</option>
+              <option value="British">British</option>
+            </select>
+          </div> */}
+
           <button>Submit</button>
         </form>
 
