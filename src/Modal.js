@@ -1,7 +1,10 @@
 import React from "react";
 
-function Modal({ closeModal }, props) {
+function Modal(props) {
     console.log(props);
+    const { closeModal } = props
+    const ingList = props.recipeObj
+    console.log(ingList);
   return (
     <div className="modal-background">
         <div className="modal-container">
@@ -12,9 +15,17 @@ function Modal({ closeModal }, props) {
                 <h4>Ingredients</h4>
             </div>
             <div className="ingredients">
+                {
+                    ingList.map( (ingredient, index) => {
+                        return (
+                            <p key={index}>
+                                {ingredient.text}
+                            </p>
+                        )
+                    })
+                }
                 <p></p>
-                <p>here is stuff</p>
-                <p>here is stuff</p>
+                
             </div>
             <div className="footer">
                 <button onClick={ () => closeModal(false)}>Go Back</button>

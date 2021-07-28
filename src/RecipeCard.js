@@ -27,7 +27,7 @@ function RecipeCard(props) {
             onClick={ () => {setOpenModal(true)}}>
             {recipe.ingredients.length} Ingredients
             </p>
-            {openModal && <Modal closeModal={setOpenModal} test={props}/>}
+            {openModal && <Modal closeModal={setOpenModal} recipeObj={props.recipeObj.recipe.ingredients}/>}
 
             <p>Serves {recipe.yield}</p>
             <a href={recipe.url} target="_blank">Recipe</a>
