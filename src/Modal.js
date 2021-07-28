@@ -3,8 +3,8 @@ import React from "react";
 function Modal(props) {
     console.log(props);
     const { closeModal } = props
-    const ingList = props.recipeObj
-    console.log(ingList);
+    const ingredientsList = props.recipeObj
+    console.log(props);
   return (
     <div className="modal-background">
         <div className="modal-container">
@@ -12,11 +12,11 @@ function Modal(props) {
                 <button onClick={ () => closeModal(false)}> X </button>
             </div>
             <div className="heading">
-                <h4>Ingredients</h4>
+                <h3>Ingredients</h3>
             </div>
             <div className="ingredients">
                 {
-                    ingList.map( (ingredient, index) => {
+                    ingredientsList.map( (ingredient, index) => {
                         return (
                             <p key={index}>
                                 {ingredient.text}
@@ -24,12 +24,10 @@ function Modal(props) {
                         )
                     })
                 }
-                <p></p>
                 
             </div>
             <div className="footer">
                 <button onClick={ () => closeModal(false)}>Go Back</button>
-                {/* <button>Get Recipe</button> */}
             </div>
         </div>
     </div>

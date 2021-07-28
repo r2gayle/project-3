@@ -23,10 +23,10 @@ function RecipeCard(props) {
                 <img src={recipe.image} alt={recipe.label}/>
             </div>
             <h3>{recipe.label}</h3>
-            <p className="open-modal" 
+            <button className="open-modal" 
             onClick={ () => {setOpenModal(true)}}>
             {recipe.ingredients.length} Ingredients
-            </p>
+            </button>
             {openModal && <Modal closeModal={setOpenModal} recipeObj={props.recipeObj.recipe.ingredients}/>}
 
             <p>Serves {recipe.yield}</p>
