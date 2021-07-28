@@ -213,4 +213,3 @@ export default App;
   // get and store value to get cuisineType from API 
   // user can add cuisine type option or not 
     // some type of logic that states if user chose ingredients and cuisine type -> call API with these params if not call api with just ingredient params
-
