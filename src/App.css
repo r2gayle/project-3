@@ -155,6 +155,28 @@ main li {
   transition: 0.3s ease-in-out;
 }
 
+/* modal section */
+
+/* .modal-background {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(200, 200, 200);
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-container {
+  width: 500px;
+  height: 500px;
+  border-radius: 10px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  padding: 25px;
+} */
+
 main img {
   width: 100%;
   border-radius: 10px;
