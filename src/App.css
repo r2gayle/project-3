@@ -201,7 +201,7 @@ main li {
   border-radius: 10px;
   width: 35%;
   min-width: 350px;
-  z-index: 20;
+  z-index: 1000;
 }
 
 .heading h3 {
