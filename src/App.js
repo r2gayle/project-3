@@ -162,17 +162,6 @@ function App() {
               <option value="South East Asian">South East Asian</option>
             </select>
           </div>
-
-          {/* <div className="drop-down-health">
-            <label htmlFor="userHealth">Diet Choice</label>
-            <select name="userHealth" id="userHealth" value={healthChoice} onChange={handleChangeThree}>
-              <option value="" selected>All</option>
-              <option value="dairy-free">Dairy</option>
-              <option value="Asian">Asian</option>
-              <option value="British">British</option>
-            </select>
-          </div> */}
-
           <button>Submit</button>
         </form>
 
@@ -203,13 +192,3 @@ function App() {
 }
 
 export default App;
-
-// error handling
-// I want modal to show only after submit has been hit AND array length is STILL 0
-  // if search put in and the array/page is still empty ie no results then create modal box 
-
-
-// Cuisine type 
-  // get and store value to get cuisineType from API 
-  // user can add cuisine type option or not 
-    // some type of logic that states if user chose ingredients and cuisine type -> call API with these params if not call api with just ingredient params

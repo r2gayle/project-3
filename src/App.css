@@ -121,6 +121,15 @@ button:hover {
   cursor: pointer;
 }
 
+form button {
+  box-shadow: 5px 5px 7px black;
+  transition: 0.3s;
+}
+
+form button:hover {
+  transform: scale(1.1)
+}
+
 main ul {
   display: flex;
   flex-wrap: wrap;
@@ -190,6 +199,7 @@ main li {
   border-radius: 10px;
   width: 35%;
   min-width: 350px;
+  overflow: auto;
 }
 
 .heading h3 {
@@ -223,6 +233,9 @@ main li {
 .ingredients {
   display: flex;
   flex-direction: column;
+  max-width: 95%;
+  margin: 0 auto;
+  overflow: auto;
 }
 
 .ingredients > * {
@@ -269,6 +282,24 @@ footer p {
 @media (max-width: 414px) {
   h1 {
     font-size: 3rem;
+  }
+}
+
+@media (max-width: 390px) {
+  .modal-container {
+    min-width: 270px;
+  }
+
+  .heading h3 {
+    font-size: calc(1rem + 0.5vw);
+  }
+  .ingredients {
+    max-width: 90%;
+    margin: 0 auto;
+  }
+
+  .ingredients p {
+    font-size: calc(0.8rem + .5vw);
   }
 }
 
