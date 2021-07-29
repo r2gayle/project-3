@@ -3,7 +3,7 @@ function Footer() {
 
     return(
         <footer>
-            <p>Created at Juno College</p>
+            <p>Created by Richard Gayle at Juno College</p>
         </footer>
     )
 }

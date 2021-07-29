@@ -5,9 +5,6 @@ import RecipeCard from './RecipeCard'
 import Footer from './Footer'
 
 
-// I want to be able to call API with particular params based on what the user has chosen 
-// testingnggggg
-
 
 function App() {
   
@@ -15,9 +12,7 @@ function App() {
   const [ userChoice, setUserChoice ] = useState("");
   const [ query, setQuery ] = useState("")
   const [ cuisine, setCuisine ] = useState("")
-  // const [healthChoice, setHealthChoice ] = useState("")
   const firstMount = useRef(true);
-  // api call rendering right away need sol
 
 
   
@@ -25,31 +20,19 @@ function App() {
 
     const apiKey = `accc4d584071e2125321b1a0c56a89b3`
     const apiId = `9c9f80c0`
-    // const reqUrl = `https://api.edamam.com/search`
-    // const input = 'chicken'
-    // current issue is that when I change value of cuisine type to a parameter on the first render it tries to grab cuisine which doesnt have a value for so runs an error, trying to find a way to stop use effet from running until it is called
 
     let params = {};
-
-    // let params = {
-    //   q: query,
-    //   from: 0,
-    //   to: 20,
-    //   cuisineType: cuisine  
-    // }
 
     if(query && cuisine) {
       params.query = query
       params.cuisineType = cuisine
-      // params.Health = healthChoice
-      console.log('hello');
     } else {
       if(query && !cuisine) {
         params.query = query
-        console.log('bye');
       }
     }
 
+    // Conditional to stop API from being called on initial mount
     if (firstMount.current) {
       firstMount.current = false;
    } else {
@@ -62,15 +45,7 @@ function App() {
       apiKey: apiKey,
       params
      }).then( (responseData) => {
-       // once we get the data back, we want to UPDATE our state that holds the data, so we can use it in our JSX
-       console.log(recipeArray)
-       console.log(responseData.data.hits);
        setRecipeArray(responseData.data.hits)
-  
-  
-  
-       // on change of query this value should change, but only does on second query change
-       console.log(recipeArray);
      })
        
    }
@@ -85,15 +60,8 @@ function App() {
   }
 
   const handleChangeTwo = (event) => {
-    setCuisine(event.target.value)
-    console.log(event.target.value);
-    
+    setCuisine(event.target.value) 
   }
-
-  // const handleChangeThree = (event) => {
-  //   setHealthChoice(event.target.value)
-  //   console.log(event.target.value);
-  // }
 
   
   const handleSubmit = (event) => {
@@ -101,18 +69,9 @@ function App() {
     
     setQuery(userChoice);
     setCuisine(cuisine);
-    // setHealthChoice(healthChoice)
     
     setUserChoice("")
-
-      
-      console.log(userChoice);
-      console.log(cuisine);
     }
-
-    
-
-
 
 
   return (
