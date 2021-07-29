@@ -284,7 +284,7 @@ footer p {
 @media(max-width: 768px) {
   .modal-container {
     height: 80vh;
-    overflow: auto;
+    /* overflow: auto; */
   }
 }
 
