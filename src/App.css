@@ -200,7 +200,6 @@ main li {
   border-radius: 10px;
   width: 35%;
   min-width: 350px;
-  overflow: auto;
 }
 
 .heading h3 {
@@ -240,7 +239,7 @@ main li {
 }
 
 .ingredients > * {
-  margin-bottom: 10px;
+  margin-bottom: 15px;
 }
 
 main img {
@@ -277,6 +276,13 @@ footer p {
 
   .drop-down-cuisine select {
     width: 330px;
+  }
+}
+
+@media(max-width: 768px) {
+  .modal-container {
+    height: 80vh;
+    overflow: auto;
   }
 }
 

@@ -2,7 +2,7 @@
 function Footer() {
 
     return(
-        <footer>
+        <footer className="wrapper">
             <p>Created by Richard Gayle at Juno College</p>
         </footer>
     )
