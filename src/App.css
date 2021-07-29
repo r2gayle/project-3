@@ -192,6 +192,7 @@ main li {
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 10;
 }
 
 
@@ -200,6 +201,7 @@ main li {
   border-radius: 10px;
   width: 35%;
   min-width: 350px;
+  z-index: 20;
 }
 
 .heading h3 {
